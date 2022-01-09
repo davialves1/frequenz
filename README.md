@@ -1,6 +1,7 @@
 # Coding Challenge for Frequenz
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+Created by Davi Alves in 09/Jan/2022
 
 ## Development server
 
