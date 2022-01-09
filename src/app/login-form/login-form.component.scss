@@ -1,0 +1,52 @@
+@use 'src/assets/theming/global-colors' as colors;
+
+$darkest-purple: map-get(colors.$color-pallet, darkest-purple);
+$white: map-get(colors.$color-pallet, white);
+$red: map-get(colors.$color-pallet, red);
+$green: map-get(colors.$color-pallet, green);
+
+input {
+  background-color: $darkest-purple !important;
+  border: solid 1px $white;
+  border-radius: 1px;
+  color: $white;
+  max-width: 420px;
+  height: 40px;
+  &:focus {
+    outline: solid 0.5px $green;
+    border: 0;
+  }
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.login-form {
+  background-color: $darkest-purple;
+  color: map-get(colors.$color-pallet, white);
+}
+
+.input-error {
+  border: solid 1px $red;
+}
+
+.clean-text {
+  color: rgb(255, 255, 255, 0.4);
+}
+
+.password-eye {
+  width: 2px;
+  position: relative;
+  right: 30px;
+  font-size: 20px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.disabled {
+  opacity: 60%;
+}
+

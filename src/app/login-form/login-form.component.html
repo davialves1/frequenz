@@ -1,0 +1,52 @@
+<div class="container-fluid login-form">
+  <div class="row">
+    <div class="col-10 col-md-5 offset-1 offset-md-1 my-2 py-5">
+      <h2 class="sub-title">Login to your account</h2>
+      <form [formGroup]="loginForm">
+        <!--Email Input-->
+        <label class="paragraph-bold mt-4" [ngClass]="{'disabled': email && email.disabled}">Email</label>
+        <input type="email" id="email" formControlName="email"
+               class="my-2 input p-2 paragraph w-100" #emailInput
+               [ngClass]="{
+                 'disabled': email && email.disabled,
+                 'clean-text': email && !email.dirty,
+                 'input-error': email && email.invalid && email.dirty
+               }"
+               (focus)="emailFocus(emailInput)"
+               (focusout)="emailFocusOut(emailInput)"/>
+        <app-alert-message
+          [errorMessage]="errorEmail"
+          [displayErrorMessage]="email && email.dirty && email.invalid">
+        </app-alert-message>
+        <!--Password Input-->
+        <label class="paragraph-bold mt-4" [ngClass]="{'disabled': password && password.disabled}">Password</label>
+        <div>
+          <input formControlName="password" id="password"
+                 class="my-2 input p-2 paragraph w-100" #passwordInput
+                 autocomplete="auto"
+                 (focus)="passwordFocus(passwordInput)"
+                 (focusout)="passwordFocusOut(passwordInput)"
+                 [type]="fieldPasswordType"
+                 [ngClass]="{
+                   'disabled': password && password.disabled,
+                   'clean-text': password && !password.dirty,
+                   'input-error': password && password.invalid && password.dirty
+               }">
+          <span *ngIf="password && password.dirty"
+                (click)="togglePasswordTextVisibility(passwordInput)"
+                class="password-eye">
+            <icon-lib [name]="eyeOpenOrClose()"></icon-lib>
+          </span>
+        </div>
+        <app-alert-message
+          [errorMessage]="errorPassword"
+          [displayErrorMessage]="password && password.dirty && password.invalid">
+        </app-alert-message>
+        <app-login-button
+          (onSubmit)="onSubmit()"
+          [formIsValid]="loginForm.valid">
+        </app-login-button>
+      </form>
+    </div>
+  </div>
+</div>

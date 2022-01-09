@@ -1,0 +1,24 @@
+@use 'src/assets/theming/global-colors' as colors;
+
+$green: map-get(colors.$color-pallet, green);
+
+.wrapper {
+  max-width: 420px;
+}
+
+.login-button {
+  background-color: $green;
+  border: none !important;
+
+  &:hover {
+    filter: drop-shadow(0 0 3px $green);
+    border: solid 1px white !important;
+  }
+}
+
+.login-button-google {
+  &:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+    color: white;
+  }
+}

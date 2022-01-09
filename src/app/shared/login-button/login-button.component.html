@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <button class="btn btn-light px-5 py-2 mt-4 sub-title login-button w-100"
+          [ngClass]="{'opacity-25': !formIsValid}"
+          [disabled]="!formIsValid"
+          (click)="fakeSubmit()"
+          type="submit">
+    <span *ngIf="!isLoading">Login</span>
+    <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"></span>
+  </button>
+  <p class="sub-title my-4 text-center">or</p>
+  <button class="btn btn-outline-light px-5 py-2 my-2 sub-title w-100 login-button-google">
+    <icon-lib name="google"></icon-lib>
+    <span class="p-2 mb-2">Login with Google</span>
+  </button>
+</div>

@@ -1,0 +1,13 @@
+@use 'src/assets/theming/global-colors' as colors;
+
+.hero {
+  min-height: 320px;
+  background-color: map-get(colors.$color-pallet, dark-purple);
+  color: map-get(colors.$color-pallet, white);
+}
+
+.green-bar {
+  width: 68px;
+  height: 8px;
+  background-color: map-get(colors.$color-pallet, green);
+}
