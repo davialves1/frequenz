@@ -32,11 +32,13 @@
                    'clean-text': password && !password.dirty,
                    'input-error': password && password.invalid && password.dirty
                }">
-          <span *ngIf="password && password.dirty"
-                (click)="togglePasswordTextVisibility(passwordInput)"
-                class="password-eye">
-            <icon-lib [name]="eyeOpenOrClose()"></icon-lib>
-          </span>
+          <div class="input-group-append">
+            <div *ngIf="password && password.dirty"
+                 (click)="togglePasswordTextVisibility(passwordInput)"
+                 class="password-eye">
+              <icon-lib [name]="eyeOpenOrClose()"></icon-lib>
+            </div>
+          </div>
         </div>
         <app-alert-message
           [errorMessage]="errorPassword"
