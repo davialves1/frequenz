@@ -7,5 +7,5 @@ $darkest-purple: map-get(colors.$color-pallet, darkest-purple);
 html, body {
   font-family: 'Barlow', sans-serif !important;
   background-color: $darkest-purple;
-  overflow: hidden;
+  overflow: auto;
 }
